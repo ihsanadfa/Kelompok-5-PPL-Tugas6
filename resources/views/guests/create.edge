@@ -1,0 +1,24 @@
+@extends('layouts.main')
+
+@section('content')
+  <h1 class="text-2xl mb-4">Tulis Pesanmu</h1>
+
+  @if(session.has('error'))
+    <div class="bg-red-100 text-red-800 p-2 rounded mb-4">
+      {{ session.get('error') }}
+    </div>
+  @endif
+
+  <form action="/guests" method="POST" class="space-y-4">
+    @csrf
+    <div>
+      <label for="name" class="block font-medium">Nama</label>
+      <input type="text" name="name" id="name" class="w-full border rounded px-2 py-1" />
+    </div>
+    <div>
+      <label for="message" class="block font-medium">Pesan</label>
+      <textarea name="message" id="message" rows="4" class="w-full border rounded px-2 py-1"></textarea>
+    </div>
+    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Kirim</button>
+  </form>
+@endsection

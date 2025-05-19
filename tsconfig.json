@@ -1,0 +1,43 @@
+{
+  "extends": "adonis-preset-ts/tsconfig.json",
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "commonjs",
+    "outDir": "build",
+    "rootDir": "./",
+    "baseUrl": "./",
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "paths": {
+      "App/*": ["app/*"],
+      "Config/*": ["config/*"],
+      "Contracts/*": ["contracts/*"],
+      "Database/*": ["database/*"],
+      "Resources/*": ["resources/*"],
+      "Start/*": ["start/*"]
+    },
+    "types": [
+      "@adonisjs/core",
+      "@adonisjs/lucid",
+      "@adonisjs/repl",
+      "@japa/preset-adonis/build/adonis-typings"
+    ]
+  },
+  "include": [
+    "app/**/*",
+    "config/**/*",
+    "contracts/**/*",
+    "database/**/*",
+    "start/**/*",
+    "resources/**/*",
+    "ace",
+    ".adonisrc.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "public"
+  ]
+}

@@ -1,0 +1,29 @@
+@extends('layouts.main')
+
+@section('content')
+  <h1 class="text-2xl mb-4">Daftar Tamu</h1>
+
+  @if(session.has('success'))
+    <div class="bg-green-100 text-green-800 p-2 rounded mb-4">
+      {{ session.get('success') }}
+    </div>
+  @endif
+
+  <a href="/guests/create" class="inline-block mb-4 text-blue-500 hover:underline">
+    + Tulis Pesan Baru
+  </a>
+
+  @if(guests.length)
+    <ul class="space-y-4">
+      @each(guest in guests)
+        <li class="border-b pb-2">
+          <p class="font-medium">{{ guest.name }}</p>
+          <p class="text-sm text-gray-700">{{ guest.message }}</p>
+          <p class="text-xs text-gray-400">{{ guest.createdAt.toFormat('DD LLL YYYY, HH:mm') }}</p>
+        </li>
+      @endeach
+    </ul>
+  @else
+    <p class="text-gray-600">Belum ada pesan.</p>
+  @endif
+@endsection
