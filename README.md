@@ -43,10 +43,6 @@ guestbook/
 ├── package.json
 └── README.md
 
-yaml
-Salin
-Edit
-
 ---
 
 ## 🚀 Menjalankan Aplikasi (Opsional)
