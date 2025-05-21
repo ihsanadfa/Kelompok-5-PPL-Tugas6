@@ -44,23 +44,3 @@ guestbook/
 └── README.md
 
 ---
-
-## 🚀 Menjalankan Aplikasi (Opsional)
-
-Jika kamu ingin mencoba menjalankan secara lokal:
-
-```bash
-# 1. Clone repository
-git clone https://github.com/username/guestbook.git
-cd guestbook
-
-# 2. Install dependencies
-npm install
-
-# 3. Setup environment
-cp .env.example .env
-node ace configure @adonisjs/lucid
-node ace migration:run
-
-# 4. Jalankan server development
-npm run dev
